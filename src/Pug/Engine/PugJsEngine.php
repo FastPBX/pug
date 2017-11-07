@@ -65,14 +65,8 @@ class PugJsEngine extends Keywords
 
     protected function parsePugJsResult($result, $path, $toDelete, array $options)
     {
-        $result = explode('rendered ', $result);
-        if (count($result) < 2) {
-            throw new \RuntimeException(
-                'Pugjs throw an error: ' . $result[0]
-            );
-        }
-        $file = trim($result[1]);
-        $html = $this->getHtml($file, $options);
+
+        $html = $result;
 
         if ($toDelete) {
             unlink($path);
@@ -144,7 +138,7 @@ class PugJsEngine extends Keywords
         );
         chdir($currentDirectory);
 
-        return $this->parsePugJsResult('rendered ' . $result, $filename, $toDelete, $options);
+        return $this->parsePugJsResult($result, $filename, $toDelete, $options);
     }
 
     /**
