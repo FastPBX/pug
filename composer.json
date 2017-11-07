@@ -1,5 +1,5 @@
 {
-    "name": "pug-php/pug",
+    "name": "fastpbx/pug",
     "replace": {
         "kylekatarnls/jade-php": "self.version"
     },
