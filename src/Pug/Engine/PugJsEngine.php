@@ -144,7 +144,7 @@ class PugJsEngine extends Keywords
         );
         chdir($currentDirectory);
 
-        return $this->parsePugJsResult($result, $filename, $toDelete, $options);
+        return $this->parsePugJsResult('rendered ' . $result, $filename, $toDelete, $options);
     }
 
     /**
